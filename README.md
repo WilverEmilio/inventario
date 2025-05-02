@@ -60,5 +60,42 @@ Este sistema está dividido en dos partes independientes:
 ### 📥 Clonar repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
+git clone https://github.com/WilverEmilio/inventario.git
+cd inventario
+```
+
+### Crear entorno virtual
+⚠️ **Nota:** Si no deseas usar un entorno virtual, puedes omitir este paso y continuar con la instalación de dependencias directamente. Sin embargo, se recomienda utilizar un entorno virtual para evitar conflictos entre dependencias de diferentes proyectos.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac 
+
+#Para activar el entorno virtual en Windows
+.venv\Scripts\Activate.ps1    # PowerShell
+.venv\Scripts\activate.bat   # CMD
+```
+
+### Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+### Configurar base de datos
+1. Abre MySQL Workbench y crea una nueva base de datos llamada `inventario`.
+2. Levantar el proyecto con el siguiente comando:
+⚠️ **Nota:** Crea la base de datos automaticamente, si no existe. 
+```bash
+uvicorn main:app --reload
+```
+
+## Licencia
+Este proyecto está bajo la Licencia MIT.
+
+## Contribuciones
+Si deseas contribuir a este proyecto, no dudes en abrir un issue o pull request. Todas las contribuciones son bienvenidas.
+
+## Derechos de autor
+Este proyecto es de propiedad de Wilver Emilio Xiá Ixcot. Todos los derechos reservados.
+```

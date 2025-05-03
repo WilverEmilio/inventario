@@ -98,4 +98,7 @@ Si deseas contribuir a este proyecto, no dudes en abrir un issue o pull request.
 
 ## Derechos de autor
 Este proyecto es de propiedad de Wilver Emilio Xiá Ixcot. Todos los derechos reservados.
-```
+
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.venv\Scripts\Activate.ps1

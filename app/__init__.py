@@ -9,6 +9,7 @@ from app.database import (Employee,
                           Sale 
                           )
 from starlette.responses import RedirectResponse
+from routes import employee_router, category_router
 
 app = FastAPI(
     title = "Inventory Management API",
@@ -22,7 +23,10 @@ app = FastAPI(
 
 api_version = APIRouter(prefix="/api/v1")
 
-app.include_router(api_version, tags=["API v1"])
+api_version.include_router(employee_router)
+api_version.include_router(category_router)
+
+app.include_router(api_version)
 
 @app.on_event("startup")
 async def startup():

@@ -9,7 +9,7 @@ from app.database import (Employee,
                           Sale 
                           )
 from starlette.responses import RedirectResponse
-from routes import employee_router, category_router
+from routes import employee_router, category_router, supplier_router
 
 app = FastAPI(
     title = "Inventory Management API",
@@ -25,6 +25,7 @@ api_version = APIRouter(prefix="/api/v1")
 
 api_version.include_router(employee_router)
 api_version.include_router(category_router)
+api_version.include_router(supplier_router)
 
 app.include_router(api_version)
 

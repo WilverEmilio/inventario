@@ -7,10 +7,10 @@ from schemas.common.common import ResponseModel, validate_email, validate_name, 
 #Attribute Supplier
 #Attribute from create a new supplier
 class SupplierRequestModel(BaseModel):
-    Name = str
-    Conctact_Name = str
-    Phone = str
-    Address = str
+    Name : str
+    Contact_Name : str
+    Phone : str
+    Address :  str
     State: bool = True
     
     #Agergar las validaciones de los atributos

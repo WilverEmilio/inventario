@@ -4,7 +4,8 @@ from app.database import (Employee,
                           User, 
                           Category, 
                           Supplier, 
-                          Product, 
+                          Product,
+                          Customer, 
                           Sale 
                           )
 from starlette.responses import RedirectResponse
@@ -33,7 +34,8 @@ async def startup():
         User, 
         Category, 
         Supplier, 
-        Product, 
+        Product,
+        Customer, 
         Sale
     ])
 

@@ -86,9 +86,23 @@ class Product(Model):
     class Meta: 
         database = database
         table_name = 'product'
+        
+class Customer(Model):
+    Name = CharField(max_length=80, unique=True)
+    Phone = CharField(max_length=8)
+    Address = CharField(max_length=255)
+    Email = CharField(max_length=100, unique=True)
+    State = BooleanField(default=True)
+    Creation_Date = DateTimeField(default=datetime.now)
+    Update_Date = DateTimeField(default=datetime.now)
+    
+    class Meta:
+        database = database
+        table_name = 'customer'
 
 class Sale(Model):
     Product = ForeignKeyField(Product, backref='sale')
+    Customer = ForeignKeyField(Customer, backref='sale')
     User = ForeignKeyField(User, backref='sale')
     Quantity = IntegerField()
     Date = DateTimeField(default=datetime.now)
@@ -121,3 +135,4 @@ class Sale(Model):
     class Meta: 
         database = database 
         table_name = 'sale'
+

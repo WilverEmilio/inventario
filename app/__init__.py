@@ -9,7 +9,12 @@ from app.database import (Employee,
                           Sale 
                           )
 from starlette.responses import RedirectResponse
-from routes import employee_router, category_router, supplier_router
+from routes import (employee_router, 
+                    category_router, 
+                    supplier_router,
+                    user_router,
+                    product_router,
+                    )
 
 app = FastAPI(
     title = "Inventory Management API",
@@ -26,6 +31,8 @@ api_version = APIRouter(prefix="/api/v1")
 api_version.include_router(employee_router)
 api_version.include_router(category_router)
 api_version.include_router(supplier_router)
+api_version.include_router(user_router)
+api_version.include_router(product_router)
 
 app.include_router(api_version)
 
@@ -50,7 +57,3 @@ async def shutdown():
         connection.close()
     
     print("La conexión a la base de datos se ha cerrado correctamente.")
-    
-@app.get('/')
-async def inicio():
-    return RedirectResponse(url='/docs/')
